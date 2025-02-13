@@ -1,0 +1,32 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/filemanage?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+        username: root
+        password: 157186
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    redis:
+        host: localhost
+        port: 6379
+        password: ""
+        database: 0
+        timeout: 5000ms
+    servlet:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+        multipart:
+            enabled: true
+            max-file-size: 1GB
+            max-request-size: 1GB
+
+mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.example.entity
+
+server:
+    port: 8082
+    tomcat:
+        max-swallow-size: 1073741824   # 设置最大上传文件的大小 (1GB in bytes)
+        max-post-size: 1073741824      # 设置最大请求体大小 (1GB in bytes)
+        tmpdir: D:/ashao-idea/FileManage/temp  # 临时文件目录
